@@ -1,12 +1,13 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { HomeComponent } from './pages/home/home.component';  // Importando o HomeComponent
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  standalone: true,
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrls: ['./app.component.css'],
+  imports: [HomeComponent]  // Adicionando HomeComponent aqui
 })
 export class AppComponent {
-  title = 'forkify-app';
+  title = 'Recipe Finder';
 }

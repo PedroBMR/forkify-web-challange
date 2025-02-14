@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Receitas</h1>
+  
+    <div *ngIf="recipes.length > 0; else noRecipes">
+      <div class="recipe-card" *ngFor="let recipe of recipes">
+        <h2>{{ recipe.title }}</h2>
+        <img [src]="recipe.image_url" [alt]="recipe.title" />
+        <p>{{ recipe.publisher }}</p>
+        <button (click)="goToRecipeDetail(recipe.id)">Ver Detalhes</button>
+      </div>
+    </div>
+  
+    <ng-template #noRecipes>
+      <p>Não encontramos receitas. Tente novamente mais tarde.</p>
+    </ng-template>
+  </div>
+  
